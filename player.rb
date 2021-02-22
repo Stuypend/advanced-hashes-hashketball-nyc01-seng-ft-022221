@@ -102,3 +102,14 @@ class Player
 
 
 end
+<<<<<<< HEAD
+=======
+
+p = Player.new("Alan Anderson", 0, 16, 22, 12, 12, 3, 1, 1)
+puts p.get_player
+puts p.get_name
+p.name = "Farts"
+puts p.get_name
+p.points = 100000
+puts p.get_player
+>>>>>>> 37894aec5fa18d02e0f2f6c2f85b650b7b6a0806

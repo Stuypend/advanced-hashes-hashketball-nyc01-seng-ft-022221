@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 require_relative "player.rb"
 require_relative  "team.rb"
 require "pry"
+=======
+require_relative /player.rb
+require_relative  /team.rb
+>>>>>>> 37894aec5fa18d02e0f2f6c2f85b650b7b6a0806
 
 def game_hash
 hsh =  {
@@ -130,6 +135,7 @@ hsh =  {
   return hsh
 end
 
+<<<<<<< HEAD
 
 
 def num_points_scored(name)
@@ -276,3 +282,23 @@ x = game_hash
 #puts num_points_scored("Jeff Adrien")
 
 # Write code here
+=======
+def build_team(hash, key)
+
+  home_team = Team.new(hash[:key][:team_name], key.to_s == "home", hash[:key][:colors], nil)
+  home_players = []
+
+  hash[:key][:players].each do |hsh|
+	   home_players.push(Player.new(hsh[:player_name],hsh[:number],hsh[:shoe],hsh[:points],hsh[:rebounds],hsh[:assists],hsh[:steals],hsh[:blocks],hsh[:dunks]))
+   end
+
+   home_team.players = home_players
+   return home_team
+end
+
+home_team = build_team(game_hash, :home)
+away_team = build_team(game_hash, :away)
+# Write code here
+puts home_team.print
+puts away_team.print
+>>>>>>> 37894aec5fa18d02e0f2f6c2f85b650b7b6a0806
